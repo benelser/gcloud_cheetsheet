@@ -57,3 +57,7 @@ gcloud projects create cli-123456 --name bensfirstproject --folder 587805611271 
 gcloud secrets list # list all secrets PROJECT specific context
 gcloud secrets versions access latest --secret="<SECRETNAME>" read contents of secret name discoverd with above command
 ```
+## IAM
+```bash
+gcloud alpha resource-manager folders get-iam-policy <FOLDERID> get iam bindings on folder
+```
