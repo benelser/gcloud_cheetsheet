@@ -27,7 +27,7 @@ gcloud functions list # list cloud functions "lambdas"
 ## Auth
 ```bash
 gcloud auth login # This will take you through OAUTH flow
-gcloud auth activate-service-account elserdotnet@product1-prod-b3c0.iam.gserviceaccount.com --keyfile=./key.json 3 activates SA for current session
+gcloud auth activate-service-account elserdotnet@product1-prod-b3c0.iam.gserviceaccount.com --keyfile=./key.json # Activates SA
 ```
 ### Set env variable for gcloud sdk to use to include tools sitting on top of SDK
 You could set this using absolute path to use across tools and jobs. Ensure your .gitignore is ignoring your key file if it is in directory.
