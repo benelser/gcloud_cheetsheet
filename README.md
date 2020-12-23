@@ -64,3 +64,10 @@ gcloud secrets versions access latest --secret="<SECRETNAME>" read contents of s
 ```bash
 gcloud alpha resource-manager folders get-iam-policy <FOLDERID> get iam bindings on folder
 ```
+List roles associated with service account
+```powershell
+gcloud projects get-iam-policy product1-prod-b3c0 `
+--flatten="bindings[].members" `
+--format='table(bindings.role)' `
+--filter="bindings.members:product1-prod-b3c0@appspot.gserviceaccount.com"
+```
