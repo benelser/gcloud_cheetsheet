@@ -18,6 +18,10 @@ gcloud alpha billing accounts list # Get billing accounts
 ```bash
 gcloud compute instances list # list compute instances "VM's"
 ```
+Get CURRENT authenticated Identity 
+```bash
+gcloud config list account --format "value(core.account)"
+```
 
 ## Functions
 ```bash
@@ -70,4 +74,8 @@ gcloud projects get-iam-policy <project> `
 --flatten="bindings[].members" `
 --format='table(bindings.role)' `
 --filter="bindings.members:<SA EMAIL>"
+```
+Get CURRENT authenticated Identity 
+```bash
+gcloud config list account --format "value(core.account)"
 ```
