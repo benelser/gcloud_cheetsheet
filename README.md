@@ -13,6 +13,11 @@ gcloud organizations list # List orgs to get id
 gcloud alpha resource-manager folders list --folder=123456789 # List all folders under specific folder id
 gcloud alpha billing accounts list # Get billing accounts
 ```
+## Org Level Policy Management
+```bash
+gcloud resource-manager org-policies describe compute.disableSerialPortLogging --effective --organization 695029235726 # Get effective policy value on specific contraint
+gcloud resource-manager org-policies enable-enforce compute.disableSerialPortLogging --organization 695029235726 # Set and enable specific contraint
+```
 
 ## Compute 
 ```bash
