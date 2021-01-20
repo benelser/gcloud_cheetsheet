@@ -87,3 +87,7 @@ Get CURRENT authenticated Identity
 ```bash
 gcloud config list account --format "value(core.account)"
 ```
+Impersonate SA -- User must be part of the 
+```bash
+gcloud config set auth/impersonate_service_account first-sa@product1-prod-a790.iam.gserviceaccount.com
+```
