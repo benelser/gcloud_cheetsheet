@@ -92,3 +92,12 @@ Impersonate SA -- User must be a member of the roles/iam.serviceAccountTokenCrea
 gcloud config set auth/impersonate_service_account first-sa@product1-prod-a790.iam.gserviceaccount.com # Activate Impersoination
 gcloud config get-value auth/impersonate_service_account # Check current impersonation
 ```
+## Service Accounts
+Create
+```bash
+gcloud iam service-accounts create svc-day1-teamcreated --description="createdByTeam" --display-name="this is my scoped sa for k8"
+```
+List
+```bash
+gcloud iam service-accounts list
+```
