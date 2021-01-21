@@ -118,5 +118,6 @@ $t.RawContent
 $header = @{
     "Authorization" = "Bearer $((gcloud auth print-access-token --format=json | ConvertFrom-Json | select token).token)"
 }
-iwr -uri "https://cloudresourcemanager.googleapis.com/v1/projects" -Headers $header
+$r = iwr -uri "https://cloudresourcemanager.googleapis.com/v1/projects" -Headers $header
+$r.Content  | ConvertFrom-Json
 ```
