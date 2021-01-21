@@ -121,3 +121,9 @@ $header = @{
 $r = iwr -uri "https://cloudresourcemanager.googleapis.com/v1/projects" -Headers $header
 $r.Content  | ConvertFrom-Json
 ```
+## Validate Token 
+```powershell
+$t = (gcloud auth print-access-token --format=json | ConvertFrom-Json | select token).token
+$r = Invoke-WebRequest -uri "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$($t)"
+$r.Content  
+```
