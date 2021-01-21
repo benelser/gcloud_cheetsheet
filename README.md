@@ -139,3 +139,10 @@ $t = (gcloud auth print-access-token --format=json | ConvertFrom-Json | select t
 $r = Invoke-WebRequest -uri "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$($t)"
 $r.Content  
 ```
+
+## Logging
+```bash
+gcloud logging logs list # list what is available
+gcloud logging read [FOLDER] # read contents from above folder
+gcloud logging write [FOLDER] [MESSAGE] # Write arbitrary data to log
+```
