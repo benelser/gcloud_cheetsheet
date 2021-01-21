@@ -105,7 +105,15 @@ List
 ```bash
 gcloud iam service-accounts list
 ```
-
+Get keys and their expiration time etc
+```powershell
+$serviceAccounts = gcloud iam service-accounts list --format=json | convertfrom-json
+foreach($sa in $serviceAccounts)
+{
+    Write-Host -Foregroundcolor Green "[+] Looking up keys for $($sa.email)"
+    gcloud iam service-accounts keys list --iam-account $sa.email
+}
+```
 ## Accessing metadata
 ```powershell
 $headers = @{
