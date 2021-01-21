@@ -73,6 +73,10 @@ gcloud secrets list # list all secrets PROJECT specific context
 gcloud secrets versions access latest --secret="<SECRETNAME>" read contents of secret name discoverd with above command
 ```
 ## IAM
+Get all IAM bindings in a project. More processing can be done with Group, Select and Foreach on $_.bindings
+```powershell
+gcloud projects get-iam-policy product1-prod-a790 --format=json | ConvertFrom-Json | ForEach-Object {$_.bindings}
+```
 ```bash
 gcloud alpha resource-manager folders get-iam-policy <FOLDERID> get iam bindings on folder
 ```
