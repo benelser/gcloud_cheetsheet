@@ -102,7 +102,7 @@ List
 gcloud iam service-accounts list
 ```
 
-## Accessing metadta
+## Accessing metadata
 ```powershell
 $headers = @{
     "Metadata-Flavor" = "Google"
