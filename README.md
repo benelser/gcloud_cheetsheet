@@ -112,3 +112,11 @@ $t = iwr -uri "http://metadata.google.internal/computeMetadata/v1/instance/servi
 $t.RawContent 
 [system.text.encoding]::ASCII.Getstring($t.content)
 ```
+
+## Grabbing current User and making REST API call
+```bash
+$header = @{
+    "Authorization" = "Bearer $((gcloud auth print-access-token --format=json | ConvertFrom-Json | select token).token)"
+}
+iwr -uri "https://cloudresourcemanager.googleapis.com/v1/projects" -Headers $header
+```
