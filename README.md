@@ -101,3 +101,14 @@ List
 ```bash
 gcloud iam service-accounts list
 ```
+
+## Accessing metadta
+```powershell
+$headers = @{
+    "Metadata-Flavor" = "Google"
+}
+
+$t = iwr -uri "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default" -Headers $headers
+$t.RawContent 
+[system.text.encoding]::ASCII.Getstring($t.content)
+```
