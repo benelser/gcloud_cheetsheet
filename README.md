@@ -146,3 +146,9 @@ gcloud logging logs list # list what is available
 gcloud logging read [FOLDER] # read contents from above folder
 gcloud logging write [FOLDER] [MESSAGE] # Write arbitrary data to log
 ```
+
+## Storage 
+Impersonate ServiceAccount with gsutil
+```bash
+gsutil -i "service-account@google.com" ls gs://pub
+```
