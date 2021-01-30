@@ -91,7 +91,7 @@ Get CURRENT authenticated Identity
 ```bash
 gcloud config list account --format "value(core.account)"
 ```
-Impersonate SA -- User must be a member of the roles/iam.serviceAccountTokenCreator on the SA resource.
+## Impersonate SA -- User must be a member of the roles/iam.serviceAccountTokenCreator on the SA resource.
 ```bash
 gcloud config set auth/impersonate_service_account first-sa@product1-prod-a790.iam.gserviceaccount.com # Activate Impersoination
 gcloud config get-value auth/impersonate_service_account # Check current impersonation
