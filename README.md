@@ -65,6 +65,7 @@ gcloud config get-value project # get current project
 gcloud projects create help # get help listing command FLAGS 
 gcloud projects create --help # For more verbose help
 gcloud projects create cli-123456 --name bensfirstproject --folder 587805611271 # Creates project with id cli-123456 and name 
+gcloud projects delete $GOOGLE_CLOUD_PROJECT # Delete entire project and its resources
 ```
 
 ## Secrets Manager
