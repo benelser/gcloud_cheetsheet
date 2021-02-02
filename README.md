@@ -97,7 +97,7 @@ gcloud config list account --format "value(core.account)"
 gcloud config set auth/impersonate_service_account first-sa@product1-prod-a790.iam.gserviceaccount.com # Activate Impersoination
 gcloud config get-value auth/impersonate_service_account # Check current impersonation
 ```
-### Setting env variable to allow applications to pick up Application Default Credentials (ADC)
+### Setting env variable to allow applications/clients/tools to pick up Application Default Credentials (ADC)
 1. Login in as a user with roles/iam.serviceAccountTokenCreator
 ```bash 
 gcloud auth login
