@@ -98,7 +98,7 @@ gcloud config set auth/impersonate_service_account first-sa@product1-prod-a790.i
 gcloud config get-value auth/impersonate_service_account # Check current impersonation
 ```
 ### Setting env variable to allow applications to pick up Application Default Credentials (ADC)
-1. Run gcloud auth login and login using your gcp email address.
+1. Run ```bashgcloud auth login``` and login using your gcp email address.
 2. Run export GOOGLE_OAUTH_ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account=<sa-name>.iam.gserviceaccount.com) command to generate temporary credentials from the service account and store as the current OAUTH token. (this OAUTH token only lasts for 1 hour so make sure the operation using this token can complete within that time frame.
 ## Service Accounts
 Create
