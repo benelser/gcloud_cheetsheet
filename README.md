@@ -97,6 +97,10 @@ gcloud config list account --format "value(core.account)"
 gcloud config set auth/impersonate_service_account first-sa@product1-prod-a790.iam.gserviceaccount.com # Activate Impersoination
 gcloud config get-value auth/impersonate_service_account # Check current impersonation
 ```
+#### Unset impersonation value
+```bash
+gcloud config unset auth/impersonate_service_account 
+```
 ### Setting env variable to allow applications/clients/tools to pick up Application Default Credentials (ADC)
 1. Login in as a user with roles/iam.serviceAccountTokenCreator
 ```bash 
@@ -149,6 +153,11 @@ $r.Content  | ConvertFrom-Json
 $t = (gcloud auth print-access-token --format=json | ConvertFrom-Json | select token).token
 $r = Invoke-WebRequest -uri "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$($t)"
 $r.Content  
+```
+
+### Same as above with service account
+```powershell
+$t = (gcloud auth print-access-token --format=json --impersonate-service-account=myexternaltest@elser-external-ip-test.iam.gserviceaccount.com | ConvertFrom-Json | select token).token
 ```
 
 ## Logging
